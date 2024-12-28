@@ -1,5 +1,7 @@
 #include <string>
 #include <sstream>
+#include <iostream>
+#include <algorithm>
 #include "song.h"
 
 using namespace std; 
@@ -15,7 +17,8 @@ using namespace std;
 //default constructor
   Song::Song(){
     artists = ""; 
-    genre = "";
+    string title = ""; 
+    string genre = "";  
   }
 
 //classify method 
@@ -24,20 +27,19 @@ using namespace std;
   //Effects: returns the classification of the song from 0 - 10
 
   uint32_t Song::classify(){
-        //the following dubles weigh each attribute equally, these weights can be modified to give preference to certain attributes 
+        //the following doubles weigh each attribute equally, these weights can be modified to give preference to certain attributes 
         //normalize the attributes so that their values are between 1 and 100
         double normPopularity = popularity; 
         double normDanceability = danceability * 100;  
         double normEnergy = energy * 100; 
         double normAccousticness = 100 - (accousticness * 100);
         double normValence = valence * 100; 
-        double normLoudness = (loudness + 50) * (100/55);
+        double normLoudness = (loudness + 50) * (100.0/55.0);
         double normTempo = tempo/2.43; 
         double normMode = mode * 100; 
 
         double average = (normPopularity + normDanceability + normEnergy + normAccousticness + normValence + normLoudness + normTempo + normMode)/8;
-
-    return average / 10; 
+    return (uint32_t)min((average / 10), 9.0); 
     }
     
 //get artist method 

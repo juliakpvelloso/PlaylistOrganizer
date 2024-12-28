@@ -1,40 +1,35 @@
 # Compiler and flags
 CXX = g++
-CXXFLAGS = -std=c++17 -Iinclude -Ithird_party/googletest/googletest/include -Wall -Wextra -pthread
+CXXFLAGS = -std=c++17 -Iinclude -Wall -Wextra -pthread
 
 # Directories
 SRC_DIR = src
 TEST_DIR = tests
 BUILD_DIR = build
-GTEST_DIR = third_party/googletest
 
 # Files
-TARGET = runTests
-SOURCES = $(wildcard $(SRC_DIR)/*.cpp $(TEST_DIR)/*.cpp)
-OBJECTS = $(patsubst %.cpp, $(BUILD_DIR)/%.o, $(SOURCES))
-
-# Google Test sources
-GTEST_SRCS = $(GTEST_DIR)/googletest/src/gtest-all.cc
-GTEST_OBJS = $(patsubst %.cc, $(BUILD_DIR)/%.o, $(GTEST_SRCS))
+TEST_TARGET = runTests
+MAIN_TARGET = playlist
+MAIN_SOURCE = main.cpp
+MAIN_OBJECT = $(BUILD_DIR)/$(MAIN_SOURCE:.cpp=.o)
+TEST_SOURCES = $(wildcard $(SRC_DIR)/*.cpp $(TEST_DIR)/*.cpp)
+TEST_OBJECTS = $(patsubst %.cpp, $(BUILD_DIR)/%.o, $(TEST_SOURCES))
+MAIN_OBJECTS = $(filter-out $(BUILD_DIR)/$(MAIN_SOURCE:.cpp=.o), $(patsubst %.cpp, $(BUILD_DIR)/%.o, $(wildcard $(SRC_DIR)/*.cpp)))
 
 # Rules
-all: $(TARGET)
+all: $(TEST_TARGET) $(MAIN_TARGET)
 
-# Create the target executable
-$(TARGET): $(OBJECTS) $(GTEST_OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $^ -pthread
+$(TEST_TARGET): $(TEST_OBJECTS)
+	$(CXX) $(CXXFLAGS) -o $@ $^ -Wl,-e,__Z12runTestsMainv
 
-# Compile source and test files
+$(MAIN_TARGET): $(MAIN_OBJECT) $(MAIN_OBJECTS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
 $(BUILD_DIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(BUILD_DIR)/%.o: %.cc
-	@mkdir -p $(dir $@)
-	$(CXX) $(CXXFLAGS) -I$(GTEST_DIR)/googletest/include -I$(GTEST_DIR) -c $< -o $@
-
-# Clean build directory and target
 clean:
-	rm -rf $(BUILD_DIR) $(TARGET)
+	rm -rf $(BUILD_DIR) $(TEST_TARGET) $(MAIN_TARGET)
 
 .PHONY: all clean

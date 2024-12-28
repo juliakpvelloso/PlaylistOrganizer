@@ -1,4 +1,0 @@
-/Users/juliavelloso/personalprojects/PlaylistOrganizer/build/CMakeFiles/runTests.dir
-/Users/juliavelloso/personalprojects/PlaylistOrganizer/build/CMakeFiles/test.dir
-/Users/juliavelloso/personalprojects/PlaylistOrganizer/build/CMakeFiles/edit_cache.dir
-/Users/juliavelloso/personalprojects/PlaylistOrganizer/build/CMakeFiles/rebuild_cache.dir

@@ -3,7 +3,8 @@
 #include <sstream>
 #include <vector>
 #include <string>
-#include "playlist.cpp"
+#include "playlist.h"
+
 
 
 
