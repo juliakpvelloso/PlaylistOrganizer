@@ -44,6 +44,8 @@ void Playlist::extractSong (const string & line){
             title = value;
         }
         else if (i == 5){
+            //debug
+            //cout << value << endl; 
             popularity = stoi(value); 
         }
         else if (i == 8){
@@ -56,6 +58,7 @@ void Playlist::extractSong (const string & line){
             loudness = stod(value);
         }
         else if (i == 12){
+            //cout << value << endl; 
             mode = (uint16_t)stoi(value);
         }
         else if (i == 14){
@@ -77,6 +80,9 @@ void Playlist::extractSong (const string & line){
 
         buckets[rating].push_back(newSong); 
         numSongs ++; 
+
+        //debug
+        //cout<< artist << "\n " << title << "\n" << genre << "\n" << danceability << "\n" << energy << "\n" << loudness << "\n" << accousticness << "\n" << valence << "\n" << tempo << "\n" << popularity<< "\n" << mode << "\n" << rating << endl; 
 }
 
 //sort playlist method 
@@ -106,6 +112,10 @@ void Playlist::sort(){
     Song prev = Song(); 
 
     while(count < numSongs){
+        //debug 
+        if(buckets[level].empty()){
+            break;
+        }
         // pick random song from current level 
         int n = buckets[level].size(); 
         int index = 0; 
@@ -120,42 +130,60 @@ void Playlist::sort(){
         }
 
         //print out song  
-        cout << buckets[level][index].toString() << "\n"; 
+        cout << buckets[level][index].toString() << " " << level << "\n"; 
         count ++;
+
+        //cout << "debug 1\n"; 
 
         //remove song from vector 
         buckets[level][index] = buckets[level][buckets[level].size() - 1]; 
-        buckets[level].pop_back();  
+        buckets[level].pop_back(); 
+        //cout << "debug 2\n";  
 
         //decide on next level 
         //Random number generation
         random_device rd;  // Seed
         mt19937 gen(rd()); // Mersenne Twister generator
         std::discrete_distribution<> dist(probabilities.begin(), probabilities.end());
+        //cout << "debug 3\n"; 
 
         // Generate a random number based on the probabilities
         int randomIndex = dist(gen);
         int nextLevel = levels[randomIndex];
         int i = 0; 
 
-        while (buckets[nextLevel].empty() && i < 6){
+        /*while (buckets[nextLevel].empty() && i < 6){
             int randomIndex = dist(gen);
             int nextLevel = levels[randomIndex]; 
             i++; 
-        }
-        
+        }*/
 
+       // Ensure the selected level is not empty
+        while (i < 6 && (nextLevel < 0 || nextLevel >= buckets.size() || buckets[nextLevel].empty())) {
+            randomIndex = dist(gen); // Retry random selection
+            nextLevel = levels[randomIndex];
+            i++;
+        }
+
+        /*if(buckets[nextLevel].empty() && !buckets[level].empty()){
+            nextLevel = level; 
+        }*/
+        
+        //cout << "debug 4\n"; 
         //if bucket chosen is still empty, move outwards from current level until found one that is not empty unless all songs have already been printed 
         if(count < numSongs && buckets[nextLevel].empty()){
             int levelHigher = level + 1; 
             int levelLower = level - 1; 
 
-            while(levelLower > 0 || levelHigher < 10){
+            //cout << "debug 5\n";
+            while(levelLower >= 0 || levelHigher < 10){
                 if(levelHigher < 10 && !buckets[levelHigher].empty()){
                     nextLevel = levelHigher; 
+                    break; 
                 }
-                else if (levelLower > 0 && !buckets[levelLower].empty()){
+                else if (levelLower >= 0 && !buckets[levelLower].empty()){
                     nextLevel = levelLower; 
+                    break;
                 }
                 else{
                     levelHigher++;
@@ -163,13 +191,18 @@ void Playlist::sort(){
                 }
             }
         }
-
+         
         level = nextLevel;
 
         //update probabilities 
         probabilities[0] *= 0.9;
         probabilities[2] *= 1.1; 
         probabilities[1] = 1 - (probabilities[0] + probabilities[2]); 
+
+        //update levels 
+        levels[0] = level - 1; 
+        levels[1] = level; 
+        levels[2] = level + 1; 
     }
 }
 

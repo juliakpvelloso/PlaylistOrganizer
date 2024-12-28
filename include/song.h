@@ -26,6 +26,8 @@ public:
     Song(); 
     //constructor
     Song(const string& artist, const string& title, const string& genre, double danceability, double energy, double loudness, double accousticness, double valence, double tempo, int popularity, uint16_t mode );
+    // Copy Constructor
+    Song(const Song& other) = default;
 
     // Public methods
     u_int32_t classify();

@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
     Playlist playlist; 
 
     //Process csv file 
-    string filename = argv[2]; // Get the filename from the command-line arguments
+    string filename = argv[1]; // Get the filename from the command-line arguments
     ifstream file(filename);
     string line;
     string junk;
@@ -36,6 +36,7 @@ int main(int argc, char *argv[]) {
 
     // Read the file line by line
     while (std::getline(file, line)) {
+        //cout << line << endl; 
         playlist.extractSong(line);
     }
 

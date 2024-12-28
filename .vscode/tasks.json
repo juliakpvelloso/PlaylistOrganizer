@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+          "-g", // Include debug symbols
+          "main.cpp", // Replace with your source files
+          "-o",
+          "${workspaceFolder}/playlist" // Output executable
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$gcc"]
+      }
+    ]
+  }
+  

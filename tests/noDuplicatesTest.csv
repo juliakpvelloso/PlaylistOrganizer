@@ -1,0 +1,11 @@
+,track_id,artists,album_name,track_name,popularity,duration_ms,explicit,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,time_signature,track_genre 
+81013,5O2P9iiztwhomNh8xkR9lJ,One Direction,FOUR (Deluxe),Night Changes,88,226600,False,0.672,0.52,8,-7.747,1,0.0353,0.859,0.0,0.115,0.37,120.001,4,pop 
+11017,3BQHpFgAp4l80e1XslIjNI,The Beatles,Help! (Remastered),Yesterday - Remastered 2009,76,125666,False,0.332,0.179,5,-11.83,1,0.0326,0.879,0.0,0.0886,0.315,96.529,4,british 
+11029,3J5pA2wR1GJa17a8vHwW23,The Rolling Stones,Halloween Hits,"Paint It Black",1,224133,False,0.496,0.858,5,-7.927,0,0.0922,0.0133,0.0675,0.349,0.773,159.69,4,british 
+20152,55n9yjI6qqXh5F2mYvUc2y,ZAYN;Taylor Swift,reputation Stadium Tour Surprise Song Playlist,I Don’t Wanna Live Forever (Fifty Shades Darker),80,247160,False,0.731,0.445,0,-8.418,1,0.0533,0.0586,1.96e-05,0.14,0.106,117.97,4,dance 
+20183,4FFtbSBa31aw38ld7zW73Z,Lady Gaga,Halloween Party 2022,Poker Face,0,238906,False,0.851,0.818,4,-4.637,1,0.0789,0.112,2.94e-06,0.0945,0.808,119.006,4,dance 
+20200,0hquQWY3xvYqN4qtiquniF,Doja Cat,Vegas (From the Original Motion Picture Soundtrack ELVIS),Vegas (From the Original Motion Picture Soundtrack ELVIS),90,182906,True,0.801,0.601,8,-7.574,0,0.255,0.0777,3.23e-05,0.145,0.74,159.969,4,dance 
+4,5vjLSffimiIP26QG5WcN2K,Chord Overstreet,Hold On,Hold On,82,198853,False,0.618,0.443,2,-9.681,1,0.0526,0.469,0.0,0.0829,0.167,119.949,4,acoustic 
+20009,6ocbgoVGwYJhOv1GgI9NsF,Ariana Grande,"thank u next",7 rings,84,178626,True,0.778,0.317,1,-10.732,0,0.334,0.592,0.0,0.0881,0.327,140.048,4,dance 
+20014,7ef4DlsgrMEH11cDZd32M6,Calvin Harris;Dua Lipa,One Kiss (with Dua Lipa),One Kiss (with Dua Lipa),89,214846,False,0.791,0.862,9,-3.24,0,0.11,0.037,2.19e-05,0.0814,0.592,123.994,4,dance 
+31651,6gpcs5eMhJwax4mIfKDYQk,Calvin Harris;Frank Ocean;Migos,Slide (feat. Frank Ocean & Migos),Slide (feat. Frank Ocean & Migos),72,230813,True,0.736,0.795,1,-3.299,0,0.0545,0.498,1.21e-06,0.254,0.511,104.066,4,electro 

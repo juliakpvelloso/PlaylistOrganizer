@@ -1,0 +1,11 @@
+,track_id,artists,album_name,track_name,popularity,duration_ms,explicit,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,time_signature,track_genre 
+81090,6vJaXvEXh6HOeiEZLFDhrp,Taylor Swift,Sunny Mornings,You Belong With Me (Taylor’s Version),9,231124,False,0.632,0.773,6,-4.856,1,0.0346,0.0623,0.0,0.0885,0.474,130.033,4,pop 
+81091,6X7pjnNm5dHSUot6hp3KFU,Taylor Swift,Autumn Vibes 2022,Lover,0,221306,False,0.359,0.543,7,-7.582,1,0.0915,0.492,1.57e-05,0.118,0.453,68.505,4,pop 
+31018,2Fxmhks0bxGSBdJ92vM42m,Billie Eilish,"WHEN WE ALL FALL ASLEEP WHERE DO WE GO?",bad guy,84,194087,False,0.701,0.425,7,-10.965,1,0.375,0.328,0.13,0.1,0.562,135.128,4,electro 
+26000,1ymvyDsiAUbzEhmSkfCSYh,Billy Eichner;Seth Rogen;JD McCrary;Childish Gambino,The Lion King (Original Motion Picture Soundtrack),Hakuna Matata,58,251520,False,0.53,0.584,0,-11.891,1,0.218,0.274,0.0,0.158,0.575,81.854,4,disney 
+64463,4G843iAtULePTse2z1epAV,Diana Krall;Clayton-Hamilton Jazz Orchestra,Christmas Songs 2022,Jingle Bells,3,205586,False,0.712,0.547,7,-6.046,0,0.147,0.369,0.0,0.101,0.579,101.443,4,jazz
+56397,0Ho6NsIqN6oOj2wY4xSSpp,Maggie Rogers,Chill Mood,Light On,1,233880,False,0.657,0.569,2,-6.287,1,0.0542,0.201,1.35e-05,0.126,0.399,102.055,4,indie-pop 
+56414,2hIsd0F6ZGfHCC1xa7vSad,Cigarettes After Sex,Cigarettes After Sex,Each Time You Fall in Love,65,290630,False,0.378,0.533,10,-8.843,1,0.0279,0.479,0.508,0.131,0.285,75.927,4,indie-pop 
+20869,59tskctgqUmjCWAwhzYAFm,Sabrina Carpenter,Singular Act II,Looking at Me,73,181120,False,0.681,0.798,2,-4.367,1,0.0375,0.00398,5.11e-06,0.0542,0.516,105.99,4,dance 
+34124,4U45aEWtQhrm8A5mxPaFZ7,Billy Joel,The Stranger (Legacy Edition),Vienna,79,214240,False,0.532,0.495,10,-6.662,1,0.0343,0.659,0.0,0.0754,0.308,124.936,4,folk 
+81095,3AYtDDIbG4DQxnEFELeFag,Taylor Swift,Autumn Vibes 2022,willow,0,214706,False,0.392,0.579,7,-9.195,1,0.164,0.835,0.00179,0.145,0.549,80.961,4,pop
