@@ -200,9 +200,9 @@ void Playlist::sort(){
         probabilities[1] = 1 - (probabilities[0] + probabilities[2]); 
 
         //update levels 
-        levels[0] = level - 1; 
+        levels[0] = min(level + 1, n-1); 
         levels[1] = level; 
-        levels[2] = level + 1; 
+        levels[2] = max(level - 1, 0); 
     }
 }
 
